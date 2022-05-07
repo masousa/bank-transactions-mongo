@@ -6,7 +6,6 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -18,9 +17,11 @@ public class Transacao {
     @JsonProperty("tipo-transacao")
     private TipoTransacao tipoTransacao;
     private String conta;
-    private BigDecimal valor;
+
+    private Double valor;
     private Boolean processada;
     @JsonProperty("data-transacao")
     private LocalDateTime dataTransacao = LocalDateTime.now();
     private String uuid = UUID.randomUUID().toString();
+    private DadosTransacao dadosTransacao;
 }

@@ -1,14 +1,16 @@
 package br.com.letscode.eighteleven.payloads;
 
+import br.com.letscode.eighteleven.domains.DadosTransacao;
 import br.com.letscode.eighteleven.domains.TipoTransacao;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-@Data
-public class CreateTransactionRequest {
+import java.math.BigDecimal;
 
+@Data
+public class TransactionResponse {
     @JsonProperty("tipo-transacao")
     private TipoTransacao tipoTransacao;
-    private String conta;
-    private Double valor;
+    private BigDecimal valor;
+    private DadosTransacao dadosTransacao;
 }
